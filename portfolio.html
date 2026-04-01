@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name — Social Media Manager & SEO Expert</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; }
+
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky; top: 0; background: #fff; z-index: 10;
+    }
+    .nav-logo { font-size: 16px; font-weight: 600; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 14px; color: #666; text-decoration: none; }
+    .nav-links a:hover { color: #1a1a1a; }
+
+    .hero { padding: 5rem 2.5rem 4rem; border-bottom: 1px solid #e5e5e5; max-width: 760px; }
+    .hero-tag {
+      display: inline-block; font-size: 12px; padding: 4px 12px;
+      border-radius: 6px; background: #e8f0fe; color: #1a56db; margin-bottom: 1.5rem;
+    }
+    .hero h1 { font-size: 42px; font-weight: 600; line-height: 1.2; margin-bottom: 1rem; }
+    .hero h1 span { color: #888; }
+    .hero p { font-size: 16px; color: #555; line-height: 1.7; max-width: 520px; margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-primary {
+      padding: 10px 22px; font-size: 14px; border-radius: 8px;
+      background: #1a1a1a; color: #fff; border: none; cursor: pointer;
+    }
+    .btn-secondary {
+      padding: 10px 22px; font-size: 14px; border-radius: 8px;
+      background: transparent; color: #1a1a1a;
+      border: 1px solid #ccc; cursor: pointer;
+    }
+
+    section { padding: 3.5rem 2.5rem; border-bottom: 1px solid #e5e5e5; }
+    .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; margin-bottom: 2rem; }
+    .section-title { font-size: 22px; font-weight: 600; margin-bottom: 0.5rem; }
+    .section-sub { font-size: 15px; color: #666; margin-bottom: 2.5rem; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .about-text { font-size: 15px; color: #555; line-height: 1.8; }
+    .about-stats { display: flex; flex-direction: column; gap: 12px; }
+    .stat-card { background: #f7f7f7; border-radius: 8px; padding: 1rem 1.25rem; }
+    .stat-num { font-size: 24px; font-weight: 600; }
+    .stat-label { font-size: 13px; color: #666; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .skill-card {
+      background: #fff; border: 1px solid #e5e5e5;
+      border-radius: 12px; padding: 1.25rem;
+    }
+    .skill-name { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .skill-desc { font-size: 13px; color: #666; line-height: 1.5; }
+    .skill-bar { margin-top: 12px; height: 3px; background: #eee; border-radius: 2px; }
+    .skill-fill { height: 100%; border-radius: 2px; background: #1a1a1a; }
+
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .project-card {
+      background: #fff; border: 1px solid #e5e5e5;
+      border-radius: 12px; padding: 1.25rem;
+    }
+    .project-tag {
+      font-size: 11px; padding: 3px 10px; border-radius: 6px;
+      background: #f0f0f0; color: #666;
+      display: inline-block; margin-bottom: 0.75rem;
+    }
+    .project-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .project-desc { font-size: 13px; color: #666; line-height: 1.6; }
+    .project-result { margin-top: 10px; font-size: 12px; color: #16a34a; font-weight: 600; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-item { display: flex; flex-direction: column; gap: 3px; }
+    .contact-item span:first-child { font-size: 12px; color: #aaa; }
+    .contact-item span:last-child { font-size: 14px; }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .contact-form input, .contact-form textarea {
+      font-size: 14px; border-radius: 8px;
+      border: 1px solid #ddd; padding: 10px 14px; width: 100%; background: #fafafa;
+    }
+    .contact-form textarea { resize: none; height: 100px; }
+    .contact-form button {
+      padding: 10px 22px; font-size: 14px;
+      background: #1a1a1a; color: #fff;
+      border: none; border-radius: 8px; cursor: pointer; align-self: flex-start;
+    }
+    footer { padding: 1.5rem 2.5rem; text-align: center; font-size: 13px; color: #aaa; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1rem; }
+      section { padding: 2.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Your Name</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Available for Work</div>
+  <h1>Social Media Manager<br><span>& SEO Expert</span></h1>
+  <p>I help businesses grow their online presence through strategic social media management and data-driven SEO — turning clicks into customers.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+    <button class="btn-secondary" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">See My Work</button>
+  </div>
+</div>
+
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      Hi, I'm a freelance Social Media Manager and SEO Expert with a passion for helping brands stand out in the digital world. I specialize in crafting targeted content strategies, managing social platforms, and optimizing websites for search engines to drive real, measurable results.<br><br>
+      Whether you're a startup or an established business, I bring creativity, data, and consistency to every project I take on.
+    </div>
+    <div class="about-stats">
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">Projects completed</div></div>
+      <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">Years of experience</div></div>
+      <div class="stat-card"><div class="stat-num">30+</div><div class="stat-label">Happy clients</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-label">Skills</div>
+  <div class="section-title">What I do best</div>
+  <div class="section-sub">Core services I offer to help your brand grow</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-name">Social Media Strategy</div>
+      <div class="skill-desc">Creating and executing platform-specific content plans for Instagram, Facebook, LinkedIn & more.</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">SEO Optimization</div>
+      <div class="skill-desc">On-page, off-page, and technical SEO to improve your search rankings and organic traffic.</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Content Creation</div>
+      <div class="skill-desc">Writing engaging captions, blogs, and ad copy tailored to your brand voice and target audience.</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Analytics & Reporting</div>
+      <div class="skill-desc">Tracking performance metrics and delivering clear monthly reports with actionable insights.</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Keyword Research</div>
+      <div class="skill-desc">In-depth keyword analysis and competitor research to identify the best growth opportunities.</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-name">Paid Ads (Meta/Google)</div>
+      <div class="skill-desc">Running and optimizing paid campaigns to maximize ROI and reach the right audience.</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">Recent Projects</div>
+  <div class="section-sub">A few examples of my work</div>
+  <div class="portfolio-grid">
+    <div class="project-card">
+      <div class="project-tag">Social Media</div>
+      <div class="project-name">Fashion Brand Growth</div>
+      <div class="project-desc">Managed Instagram & Facebook for a local clothing brand — created content calendar, ran ads, and grew community.</div>
+      <div class="project-result">+120% followers in 3 months</div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">SEO</div>
+      <div class="project-name">E-commerce SEO Audit</div>
+      <div class="project-desc">Full technical SEO audit and on-page optimization for an online store selling handmade products.</div>
+      <div class="project-result">+85% organic traffic in 4 months</div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Strategy</div>
+      <div class="project-name">Restaurant Digital Presence</div>
+      <div class="project-desc">Built complete social media presence from scratch — branding, content, local SEO, and Google My Business setup.</div>
+      <div class="project-result">Top 3 Google ranking locally</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" id="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">Let's work together</div>
+  <div class="section-sub">Have a project in mind? Get in touch</div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item"><span>Email</span><span>yourname@email.com</span></div>
+      <div class="contact-item"><span>WhatsApp</span><span>+92 300 0000000</span></div>
+      <div class="contact-item"><span>Location</span><span>Lahore, Pakistan</span></div>
+      <div class="contact-item"><span>Availability</span><span>Open to new clients</span></div>
+    </div>
+    <div class="contact-form">
+      <input type="text" placeholder="Your name" />
+      <input type="email" placeholder="Your email" />
+      <textarea placeholder="Tell me about your project..."></textarea>
+      <button>Send message</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Designed & built with care · Your Name · 2025
+</footer>
+
+</body>
+</html>
